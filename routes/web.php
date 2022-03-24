@@ -25,3 +25,7 @@ route::get("/guardar",[\App\Http\Controllers\CustomerController::class,'save'])-
 route::get("/editar/{id}",[\App\Http\Controllers\CustomerController::class,'modificar'])->name('modificar');
 route::get("/edita/{id}",[\App\Http\Controllers\CustomerController::class,'edit'])->name('edit');
 route::delete("/delete/{id}",[\App\Http\Controllers\CustomerController::class,'delete'])->name('delete');
+
+//proveedores
+Route::get('/Registrar-Pro',[\App\Http\Controllers\ProviderController::class, 'register'])->name('providers.register');
+route::get("/Guardar-Pro",[\App\Http\Controllers\ProviderController::class,'save'])->name("save");
