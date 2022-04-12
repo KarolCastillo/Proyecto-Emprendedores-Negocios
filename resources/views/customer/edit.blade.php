@@ -18,12 +18,13 @@
                 </ul>
             </div>
         @endif
-        <h2>MODIFICAR CLIENTE</h2>
-        <br>
+        <h2 class="text-center">MODIFICAR CLIENTE</h2>
+
 
         <form action="{{route('edit',$cliente->id)}}" mathod="POST">
             @csrf
             @method('patch')
+
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">NIT</label>
                 <input type="text" disabled="disabled" class="form-control" value="{{$cliente->id}}" name="id" id="exampleFormControlInput1" placeholder="8472300">

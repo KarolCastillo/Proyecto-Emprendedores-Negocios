@@ -13,10 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//login
+
+Route:: view('/','welcome');
+
+Route:: post('welcome',function(){
+
+    return'post welcome';
+
 });
 
+//clientes Customer
 Route::get( '/listar', [\App\Http\Controllers\CustomerController::class, 'index' ] )->name('customer.index');
 Route::get('/registrar',[\App\Http\Controllers\CustomerController::class, 'register'])->name('customer.register');
 Route::get( '/editar-cliente', [\App\Http\Controllers\CustomerController::class, 'index' ] )->name('customer.index');
@@ -26,6 +33,13 @@ route::get("/editar/{id}",[\App\Http\Controllers\CustomerController::class,'modi
 route::get("/edita/{id}",[\App\Http\Controllers\CustomerController::class,'edit'])->name('edit');
 route::delete("/delete/{id}",[\App\Http\Controllers\CustomerController::class,'delete'])->name('delete');
 
-//proveedores
+//proveedores Provider
 Route::get('/Registrar-Pro',[\App\Http\Controllers\ProviderController::class, 'register'])->name('providers.register');
 route::get("/Guardar-Pro",[\App\Http\Controllers\ProviderController::class,'save'])->name("save");
+Route::get( '/listar', [\App\Http\Controllers\ProviderController::class, 'index' ] )->name('providers.index');
+
+//Predio Parking
+Route::get('/Parking',[\App\Http\Controllers\ParkingController::class, 'register'])->name('parking.register');
+route::get("/Guardar-Parking",[\App\Http\Controllers\ParkingController::class,'save'])->name("save");
+Route::get( '/listar-Predio', [\App\Http\Controllers\ParkingController::class, 'index' ] )->name('parking.index');
+

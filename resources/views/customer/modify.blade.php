@@ -2,7 +2,7 @@
 
 @section('contenido')
     <div class="p-3 bg-white mb-3">
-        <h3>Lista de Comercios</h3>
+        <h3 class="text-center">Lista de Clientes</h3>
 
         <div class="table-responsive">
             <table class="table table-hover text-center">

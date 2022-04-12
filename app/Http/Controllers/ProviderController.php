@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ProviderController extends Controller
 {
+    public function index(){
+        $customers = Provider::paginate(5);
+        return view('providers.listp', compact('customers'));
+    }
+
     //FORMULARIO PARA REGISTRAR NUEVO PROVEEDOR
     public function register(){
         return view('providers.createp');
@@ -16,12 +21,13 @@ class ProviderController extends Controller
     public function save(Request $request){
 
         $validator=$this->validate($request,[
+            //el id es el nit del proveedor
             'id'=>'required|unique:providers',
             'nombre'=>'required',
             'direccion'=>'required',
             'correo'=>'required|email|unique:providers',
             'numero'=>'required',
-            //'mercaderia'=> 'nullable',
+            'mercaderia'=> 'nullable',
         ]);
 
         $userdata = request()->except('_token');

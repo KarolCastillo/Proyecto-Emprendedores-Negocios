@@ -26,6 +26,7 @@ class CustomerController extends Controller
     //GUARDAR CLIENTE EN LA BD
     public function save(Request $request){
         $validator=$this->validate($request,[
+            //el id es el nit del cliente
             'id'=>'required|unique:customer',
             'nombre'=>'required',
             'direccion'=>'required',

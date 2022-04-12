@@ -1,8 +1,10 @@
 @extends('layout')
 
 @section('contenido')
+
+
     <div class="p-3 bg-white mb-3">
-        <h3 class="text-center">Lista de Clientes</h3>
+        <h3 class="text-center">Lista de Proveedor</h3>
 
         <div class="table-responsive">
             <table class="table table-hover text-center">
@@ -13,6 +15,7 @@
                     <th scope="col">CORREO</th>
                     <th scope="col">DIRECCION</th>
                     <th scope="col">TELEFONO</th>
+                    <th scope="col">MERCADERIA</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,6 +26,7 @@
                         <td>{{$customer->correo}}</td>
                         <td>{{$customer->direccion}}</td>
                         <td>{{$customer->numero}}</td>
+                        <td>{{$customer->mercaderia}}</td>
                     </tr>
                 @endforeach
                 </tbody>

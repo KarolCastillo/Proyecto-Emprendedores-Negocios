@@ -18,11 +18,13 @@
                 </ul>
             </div>
         @endif
-        <h2>REGISTRAR NUEVO PROVEEDOR</h2>
-        <br>
+
+        <h2 class="text-center">REGISTRAR NUEVO PROVEEDOR</h2>
+
 
         <form action="{{route('save')}}" mathod="POST">
             @csrf
+
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">NIT</label>
                 <input type="text" class="form-control" name="id" id="exampleFormControlInput1" placeholder="8472300">
