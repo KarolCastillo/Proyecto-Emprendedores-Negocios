@@ -15,27 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 //login
 
-Route:: view('/','welcome');
+Route:: view('/','auth.login');
 
-Route:: post('welcome',function(){
+//Administrador
+Route:: view('/usuario','auth.register');
 
-    return'post welcome';
-
-});
-
+// vista de inicio
+Route::get( '/inicio', [\App\Http\Controllers\CustomerController::class, 'inicio' ] )->name('customer.inicio');
 //clientes Customer
-Route::get( '/listar', [\App\Http\Controllers\CustomerController::class, 'index' ] )->name('customer.index');
+Route::get( '/listarCustomer', [\App\Http\Controllers\CustomerController::class, 'index' ] )->name('customer.index');
 Route::get('/registrar',[\App\Http\Controllers\CustomerController::class, 'register'])->name('customer.register');
 Route::get( '/editar-cliente', [\App\Http\Controllers\CustomerController::class, 'index' ] )->name('customer.index');
 Route::get( '/modificar-cliente', [\App\Http\Controllers\CustomerController::class, 'ver' ])->name('customer.ver');
-route::get("/guardar",[\App\Http\Controllers\CustomerController::class,'save'])->name("save");
+route::get("/guardar",[\App\Http\Controllers\CustomerController::class,'SaveCustomer'])->name("SaveCustomer");
 route::get("/editar/{id}",[\App\Http\Controllers\CustomerController::class,'modificar'])->name('modificar');
 route::get("/edita/{id}",[\App\Http\Controllers\CustomerController::class,'edit'])->name('edit');
 route::delete("/delete/{id}",[\App\Http\Controllers\CustomerController::class,'delete'])->name('delete');
 
 //proveedores Provider
 Route::get('/Registrar-Pro',[\App\Http\Controllers\ProviderController::class, 'register'])->name('providers.register');
-route::get("/Guardar-Pro",[\App\Http\Controllers\ProviderController::class,'save'])->name("save");
+route::get("/Guardar-Pro",[\App\Http\Controllers\ProviderController::class,'SaveProvider'])->name("SaveProvider");
 Route::get( '/listar', [\App\Http\Controllers\ProviderController::class, 'index' ] )->name('providers.index');
 
 //Predio Parking
@@ -43,3 +42,9 @@ Route::get('/Parking',[\App\Http\Controllers\ParkingController::class, 'register
 route::get("/Guardar-Parking",[\App\Http\Controllers\ParkingController::class,'save'])->name("save");
 Route::get( '/listar-Predio', [\App\Http\Controllers\ParkingController::class, 'index' ] )->name('parking.index');
 
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

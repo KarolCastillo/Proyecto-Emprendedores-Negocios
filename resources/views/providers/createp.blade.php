@@ -22,7 +22,7 @@
         <h2 class="text-center">REGISTRAR NUEVO PROVEEDOR</h2>
 
 
-        <form action="{{route('save')}}" mathod="POST">
+        <form action="{{route('SaveProvider')}}" mathod="POST">
             @csrf
 
             <div class="mb-3">

@@ -21,7 +21,7 @@
             <h2 class="text-center">CREAR CLIENTE</h2>
 
 
-        <form action="{{route('save')}}" mathod="POST">
+        <form action="{{route('SaveCustomer')}}" mathod="POST">
             @csrf
 
                 <div class="mb-3">
@@ -49,7 +49,7 @@
 
                 <div class="mb-3">
                     <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">GUARDAR</button>
-                    <a type="button " href="{{ url('/listar')}}" class="btn btn-danger col-md-3 mt-3 offset float-right">VOLVER </a>
+                    <a type="button " href="{{ url('/listarCustomer')}}" class="btn btn-danger col-md-3 mt-3 offset float-right">VOLVER </a>
 
                 </div>
         </form>

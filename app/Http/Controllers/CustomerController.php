@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    //vista de inicio, no se ve nada mas que el navard
+    public function inicio(){
+        return view('layout');
+    }
+
     //VISTA DE LISTA CLIENTES
     public function index(){
         $customers = Customer::paginate(5);
@@ -19,12 +30,12 @@ class CustomerController extends Controller
 
     //VISTA DE LISTA DE CLIENTES CON OPCIONES DE MODIFICAR (EDITAR Y ELIMINAR)
     public function ver(){
-        $customers = Customer::paginate(5);
+        $customers = Customer::paginate(14);
         return view('customer.modify', compact('customers'));
     }
 
     //GUARDAR CLIENTE EN LA BD
-    public function save(Request $request){
+    public function SaveCustomer(Request $request){
         $validator=$this->validate($request,[
             //el id es el nit del cliente
             'id'=>'required|unique:customer',

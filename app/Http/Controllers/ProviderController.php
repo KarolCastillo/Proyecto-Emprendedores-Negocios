@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ProviderController extends Controller
 {
     public function index(){
-        $customers = Provider::paginate(5);
+        $customers = Provider::paginate(14);
         return view('providers.listp', compact('customers'));
     }
 
@@ -18,7 +18,7 @@ class ProviderController extends Controller
     }
 
     //GUARDAR PROVEEDOR EN LA BD
-    public function save(Request $request){
+    public function SaveProvider(Request $request){
 
         $validator=$this->validate($request,[
             //el id es el nit del proveedor
