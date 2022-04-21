@@ -12,7 +12,6 @@
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="/inicio">Inicio</a>
-                <a class="navbar-brand" href="/usuario">usuario</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -24,7 +23,8 @@
                             </a>
 
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item " href="/usuario">Usuario</a></li>
+                                <li><a class="dropdown-item " href="/usuario">Crear Usuario</a></li>
+                                <li><a class="dropdown-item " href="{{route('customer.usuario')}}"> Ver registro Usuario</a></li>
                             </ul>
 
                         </li>
