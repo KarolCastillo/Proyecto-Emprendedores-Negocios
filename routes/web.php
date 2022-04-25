@@ -18,8 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route:: view('/','auth.login');
 
 //Administrador
+//Usuario
 Route:: view('/usuario','auth.register');
 Route::get( '/listarUsuario', [\App\Http\Controllers\UserController::class, 'usuario' ] )->name('customer.usuario');
+route::delete("/delete_User/{id}",[\App\Http\Controllers\UserController::class,'delete_user'])->name('delete_User');
 // vista de inicio
 Route::get( '/inicio', [\App\Http\Controllers\CustomerController::class, 'inicio' ] )->name('customer.inicio');
 //clientes Customer

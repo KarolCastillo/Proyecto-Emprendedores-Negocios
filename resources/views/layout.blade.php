@@ -34,7 +34,6 @@
                             </a>
                             <ul class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
                                 <li><a class="dropdown-item " href="{{route('parking.index')}}">Ver Predio</a></li>
-                                <li><a class="dropdown-item " href="{{route('parking.register')}}">Registrar</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">

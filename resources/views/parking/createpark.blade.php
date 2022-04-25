@@ -65,7 +65,7 @@
 
                 <div class="mb-2">
                     <button type="submit" class="btn btn-success col-md-3 mt-3 mr-2 offset">INGRESAR</button>
-                    <a type="button " href="{{ url('/listar')}}" class="btn btn-danger col-md-3 mt-3 offset float-right">VOLVER /CANCELAR </a>
+                    <a type="button " href="{{ url('/listar-Predio')}}" class="btn btn-danger col-md-3 mt-3 offset float-right">VOLVER / CANCELAR </a>
 
                 </div>
         </form>
