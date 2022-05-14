@@ -14,14 +14,16 @@ class CreateProvidersTable extends Migration
     public function up()
     {
         Schema::create('providers', function (Blueprint $table) {
-            $table->string('id', 75);
-            $table->string('nombre', 75);
+            $table->engine = "InnoDB";
+            $table->bigIncrements('id');
+            $table->string('nombre', 250);
             $table->string('direccion', 250);
-            $table->string('correo', 25);
-            $table->string('numero', 25);
+            $table->string('correo', 250);
+            $table->integer('numero');
             $table->boolean('mercaderia');
             $table->timestamps();
         });
+
     }
 
     /**

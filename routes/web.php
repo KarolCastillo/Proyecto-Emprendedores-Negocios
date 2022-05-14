@@ -44,8 +44,12 @@ Route::get('/Parking',[\App\Http\Controllers\ParkingController::class, 'register
 route::get("/Guardar-Parking",[\App\Http\Controllers\ParkingController::class,'save'])->name("save");
 Route::get( '/listar-Predio', [\App\Http\Controllers\ParkingController::class, 'index' ] )->name('parking.index');
 
-
-
+//servicio Service
+Route::get( '/listar-Service', [\App\Http\Controllers\ServiceController::class, 'index' ] )->name('service.index');
+route::get("/Guardar-Service",[\App\Http\Controllers\ServiceController::class,'SaveService'])->name("SaveService");
+Route::get('/registrar-Service',[\App\Http\Controllers\ServiceController::class, 'register'])->name('service.register');
+route::get("/editar-Service/{id_service}",[\App\Http\Controllers\ServiceController::class,'modificar'])->name('modificarService');
+route::get("/edita-Service/{id_service}",[\App\Http\Controllers\ServiceController::class,'edit'])->name('editService');
 
 Auth::routes();
 

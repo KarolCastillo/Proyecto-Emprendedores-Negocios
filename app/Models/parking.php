@@ -10,7 +10,7 @@ class parking extends Model
     public $table = 'parking';
     public $timestamps=false;
     protected $fillable=[
-        'id','placa', 'nombre', 'fecha', 'hora', 'sector', 'servicio'
+        'id','placa', 'nombre', 'fecha', 'hora', 'service_id'
     ];
 
     protected $primaryKey='id';
